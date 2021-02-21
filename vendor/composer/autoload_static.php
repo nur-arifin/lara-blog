@@ -36,6 +36,7 @@ class ComposerStaticInit3e41953a0f5d2dd2e8db13fb75687233
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
+        '97727b6b0f2834e612425988413c7612' => __DIR__ . '/..' . '/appslabke/lara-izitoast/lara-izitoast/src/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -128,6 +129,7 @@ class ComposerStaticInit3e41953a0f5d2dd2e8db13fb75687233
             'Laravel\\Ui\\' => 11,
             'Laravel\\Tinker\\' => 15,
             'Laravel\\Sail\\' => 13,
+            'LaraIzitoast\\' => 13,
         ),
         'I' => 
         array (
@@ -400,6 +402,10 @@ class ComposerStaticInit3e41953a0f5d2dd2e8db13fb75687233
         array (
             0 => __DIR__ . '/..' . '/laravel/sail/src',
         ),
+        'LaraIzitoast\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/appslabke/lara-izitoast/lara-izitoast/src',
+        ),
         'Illuminate\\Support\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Macroable',
@@ -527,6 +533,7 @@ class ComposerStaticInit3e41953a0f5d2dd2e8db13fb75687233
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Backend\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/DashboardController.php',
+        'App\\Http\\Controllers\\Backend\\RoleController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/RoleController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
@@ -2542,6 +2549,8 @@ class ComposerStaticInit3e41953a0f5d2dd2e8db13fb75687233
         'Illuminate\\View\\ViewName' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewName.php',
         'Illuminate\\View\\ViewServiceProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewServiceProvider.php',
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
+        'LaraIzitoast\\LaraIzitoastServiceProvider' => __DIR__ . '/..' . '/appslabke/lara-izitoast/lara-izitoast/src/LaraIzitoastServiceProvider.php',
+        'LaraIzitoast\\Toaster' => __DIR__ . '/..' . '/appslabke/lara-izitoast/lara-izitoast/src/Toaster.php',
         'Laravel\\Sail\\SailServiceProvider' => __DIR__ . '/..' . '/laravel/sail/src/SailServiceProvider.php',
         'Laravel\\Tinker\\ClassAliasAutoloader' => __DIR__ . '/..' . '/laravel/tinker/src/ClassAliasAutoloader.php',
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',

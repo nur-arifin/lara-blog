@@ -36,9 +36,15 @@
             <ul class="vertical-nav-menu">
                 <li class="app-sidebar__heading">Dashboards</li>
                 <li>
-                    <a href="index.html" class="mm-active">
+                    <a href="{{ Route('app.dashboard') }}" class="{{ Route::is('app.dashboard') ? 'mm-active' : '' }}">
                         <i class="metismenu-icon pe-7s-rocket"></i>
-                        Dashboard Example 1
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ Route('app.roles.index') }}" class="{{ Request::is('app/roles*') ? 'mm-active' : '' }}">
+                        <i class="metismenu-icon pe-7s-check"></i>
+                        Roles
                     </a>
                 </li>
             </ul>

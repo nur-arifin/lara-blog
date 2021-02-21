@@ -15,13 +15,16 @@
 
     <!-- Styles -->
     <link href="{{ asset('main.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/iziToast.css') }}" rel="stylesheet">
+    @stack('css')
 </head>
 <body>
 <div id="app" class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
     @include ('layouts.backend.partials.header')
 
     <div class="app-main">
-       @include ('layouts.backend.partials.sidebar')
+        @include ('layouts.backend.partials.sidebar')
         <div class="app-main__outer">
             <div class="app-main__inner">
                 @yield ('content')
@@ -34,6 +37,10 @@
 
 <!-- Scripts -->
 <script src="{{ asset('assets/scripts/main.js') }}"></script>
-{{--<script src="{{ asset('js/app.js') }}"></script>--}}
+<script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ asset('js/iziToast.js') }}"></script>
+<script src="{{ asset('js/script.js') }}"></script>
+@include('vendor.lara-izitoast.toast')
+@stack('js')
 </body>
 </html>

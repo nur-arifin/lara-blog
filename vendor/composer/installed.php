@@ -6,11 +6,20 @@
     'aliases' => 
     array (
     ),
-    'reference' => '7a144863f1fe1f7b4489ba9d2f9c65ae10416a98',
+    'reference' => 'ae1605c729b11bafe7c065c4f0c074bc6d5536f3',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
   array (
+    'appslabke/lara-izitoast' => 
+    array (
+      'pretty_version' => 'v1.1.1',
+      'version' => '1.1.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '9636c4c3b28855c5d9c6169a10499f6b59568e0a',
+    ),
     'asm89/stack-cors' => 
     array (
       'pretty_version' => 'v2.0.2',
@@ -445,7 +454,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '7a144863f1fe1f7b4489ba9d2f9c65ae10416a98',
+      'reference' => 'ae1605c729b11bafe7c065c4f0c074bc6d5536f3',
     ),
     'laravel/sail' => 
     array (
