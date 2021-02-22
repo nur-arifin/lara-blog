@@ -35,7 +35,8 @@
         <div class="col-md-2">
             <div class="main-card mb-3 card">
                 <div class="card-body">
-                    <img src="{{ isset($user) ? $user->getFirstMediaUrl('avatar') : ''  }}" class="img-fluid img-thumbnail" alt="avatar">
+                    <img src="{{ $user->getFirstMediaUrl('avatar') != null ?
+                        $user->getFirstMediaUrl('avatar') : config('app.placeholder').'160' }}" class="img-fluid img-thumbnail" alt="avatar">
                 </div>
                 <!-- /.card-body -->
             </div>

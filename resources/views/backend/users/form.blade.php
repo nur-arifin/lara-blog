@@ -129,10 +129,9 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="avatar">Avatar</label>
-                                    <input type="file" id="avatar" class="dropify form-control @error('avatar')
-                                        is-invalid @enderror" name="avatar" value="{{ $user->avatar ?? old('avatar') }}"
-                                            data-default-file="{{ isset($user) ? $user->getfirstmediaurl('avatar') : ''}} "
-                                           {{ !isset($user) ? 'required' : '' }} >
+                                    <input type="file" name="avatar" id="avatar"
+                                           class="dropify @error('avatar') is-invalid @enderror"
+                                           data-default-file="{{ Auth::user()->getFirstMediaUrl('avatar') ?? '' }}">
 
                                     @error('avatar')
                                     <span class="text-danger" role="alert">

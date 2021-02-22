@@ -1,6 +1,9 @@
 <div class="app-header header-shadow">
     <div class="app-header__logo">
-        <div class="logo-src"></div>
+        {{--<div class="logo-src"></div>--}}
+        <div class="navbar-brand">
+            Lara-Blog
+        </div>
         <div class="header__pane ml-auto">
             <div>
                 <button type="button" class="hamburger close-sidebar-btn hamburger--elastic"
@@ -33,11 +36,18 @@
     </div>
     <div class="app-header__content">
         <div class="app-header-left">
+            <div class="search-wrapper">
+                <div class="input-holder">
+                    <input type="text" class="search-input" placeholder="Type to search">
+                    <button class="search-icon"><span></span></button>
+                </div>
+                <button class="close"></button>
+            </div>
             <ul class="header-menu nav">
                 <li class="dropdown nav-item">
-                    <a href="javascript:void(0);" class="nav-link">
-                        <i class="nav-link-icon fa fa-cog"></i>
-                        Visit site
+                    <a href="" class="nav-link">
+                        <i class="nav-link-icon pe-7s-shuffle"></i>
+                        Visit Site
                     </a>
                 </li>
             </ul>
@@ -50,18 +60,19 @@
                             <div class="btn-group">
                                 <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                    class="p-0 btn">
-                                    <img width="42" class="rounded-circle" src="{{ url('assets/images/avatars/1.jpg') }}" alt="">
+                                    <img width="42" class="rounded-circle" src="{{ Auth::user()->getFirstMediaUrl('avatar') != null ? Auth::user()->getFirstMediaUrl('avatar') : config('app.placeholder').'160' }}"
+                                         alt="">
                                     <i class="fa fa-angle-down ml-2 opacity-8"></i>
                                 </a>
                                 <div tabindex="-1" role="menu" aria-hidden="true"
                                      class="dropdown-menu dropdown-menu-right">
-                                    <a href="" type="button" tabindex="0" class="dropdown-item">Profile</a>
-                                    <a href="" type="button" tabindex="0" class="dropdown-item">Changes password</a>
-                                    <a href="" type="button" tabindex="0" class="dropdown-item">Settings</a>
+                                    <a tabindex="0" class="dropdown-item" href="{{ route('app.profile.index') }}">Profile</a>
+                                    <a tabindex="0" class="dropdown-item" href="{{ route('app.profile.password.change') }}">Change Password</a>
+                                    <a tabindex="0" class="dropdown-item" href="">Settings</a>
                                     <div tabindex="-1" class="dropdown-divider"></div>
-                                    <button type="button" tabindex="0" class="dropdown-item"  onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">Logout</button>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    <button type="button" tabindex="0" class="dropdown-item" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">{{ __('Logout') }}</button>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
                                 </div>
