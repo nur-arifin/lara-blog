@@ -22,7 +22,8 @@ class userSeeder extends Seeder
             'role_id' => $adminRole->id,
             'name' => 'Admin',
             'email' => 'admin@mail.com',
-            'password' => Hash::make('password')
+            'password' => Hash::make('password'),
+            'status' => true
         ]);
 
         // Create user
@@ -31,7 +32,8 @@ class userSeeder extends Seeder
             'role_id' => $userRole->id,
             'name' => 'Jone Doe',
             'email' => 'user@mail.com',
-            'password' => Hash::make('password')
+            'password' => Hash::make('password'),
+            'status' => true
         ]);
     }
 }
