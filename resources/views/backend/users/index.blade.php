@@ -1,4 +1,5 @@
 @extends('layouts.backend.app')
+@section('title','Users')
 @push('css')
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css">
 @endpush
@@ -48,7 +49,7 @@
                                                 <div class="widget-content-left">
                                                     <img width="40" class="rounded-circle"
                                                          src="{{ $user->getFirstMediaUrl('avatar') != null ?
-                        $user->getFirstMediaUrl('avatar') : config('app.placeholder').'160' }}"
+                        $user->getFirstMediaUrl('avatar','thumb') : config('app.placeholder').'160' }}"
                                                          alt="User Avatar">
                                                 </div>
                                             </div>

@@ -3,11 +3,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ setting('site_description') }}">
+    <meta name="address" content="{{ setting('site_address') }}">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title') | {{ setting('site_title') }}</title>
+
+    <link rel="icon"  href="{{ setting('site_favicon') != null ? Storage::disk('public')->url(setting('site_favicon')) : '' }}"/>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -31,7 +36,6 @@
             </div>
             @include('layouts.backend.partials.footer')
         </div>
-        <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
     </div>
 </div>
 

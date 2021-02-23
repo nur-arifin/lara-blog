@@ -1,4 +1,5 @@
 @extends('layouts.backend.app')
+@section('title','Roles')
 @push('css')
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css">
 @endpush

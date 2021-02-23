@@ -1,8 +1,8 @@
 <div class="app-header header-shadow">
     <div class="app-header__logo">
-        {{--<div class="logo-src"></div>--}}
+        <div class="logo"><img height="30px" src="{{ setting('site_logo') != null ? Storage::disk('public')->url(setting('site_logo')) : '' }}" alt=""></div>
         <div class="navbar-brand">
-            Lara-Blog
+            {{ setting('site_title') }}
         </div>
         <div class="header__pane ml-auto">
             <div>

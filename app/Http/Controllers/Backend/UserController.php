@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Controllers\Controller;
+use App\Http\Requests\Users\StoreUserRequest;
+use App\Http\Requests\Users\UpdateUserRequest;
 use App\Models\Role;
 use App\Models\User;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Hash;
 
@@ -14,12 +15,12 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\View\View
      */
     public function index()
     {
         Gate::authorize('app.users.index');
-        $users = User::all();
+        $users = User::getAllUsers();
         return view('backend.users.index',compact('users'));
     }
 
@@ -31,26 +32,18 @@ class UserController extends Controller
     public function create()
     {
         Gate::authorize('app.users.create');
-        $roles = Role::all();
-        return view('backend.users.form',compact('roles'));
+        $roles = Role::getForSelect();
+        return view('backend.users.form', compact('roles'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request)
+    public function store(StoreUserRequest $request)
     {
-        Gate::authorize('app.users.create');
-        $this->validate($request,[
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'role' => 'required',
-            'password' => 'required|confirmed|string|min:8',
-            'avatar' => 'required|image'
-        ]);
         $user = User::create([
             'role_id' => $request->role,
             'name' => $request->name,
@@ -74,7 +67,6 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        Gate::authorize('app.users.index');
         return view('backend.users.show',compact('user'));
     }
 
@@ -94,20 +86,12 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\User  $user
+     * @param UpdateUserRequest $request
+     * @param User $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(UpdateUserRequest $request, User $user)
     {
-        Gate::authorize('app.users.edit');
-        $this->validate($request,[
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users,email,'.$user->id,
-            'role' => 'required',
-            'password' => 'nullable|confirmed|string|min:8',
-            'avatar' => 'nullable|image'
-        ]);
         $user->update([
             'role_id' => $request->role,
             'name' => $request->name,
@@ -126,14 +110,15 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\User  $user
+     * @param User $user
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
     public function destroy(User $user)
     {
         Gate::authorize('app.users.destroy');
         $user->delete();
-        notify()->success("User Deleted","success");
+        notify()->success("User Successfully Deleted", "Deleted");
         return back();
     }
 }

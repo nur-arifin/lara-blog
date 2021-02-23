@@ -14,7 +14,7 @@
                     <i class="pe-7s-news-paper icon-gradient bg-mean-fruit">
                     </i>
                 </div>
-                <div>aa</div>
+                <div>{{ __('Pages') }}</div>
             </div>
             <div class="page-title-actions">
                 <div class="d-inline-block dropdown">
@@ -22,7 +22,7 @@
                         <span class="btn-icon-wrapper pr-2 opacity-7">
                             <i class="fas fa-plus-circle fa-w-20"></i>
                         </span>
-                        create
+                        {{ __('create') }}
                     </a>
                 </div>
             </div>
