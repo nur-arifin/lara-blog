@@ -15,9 +15,9 @@ class SettingSeeder extends Seeder
     public function run()
     {
         // General Settings
-        Setting::updateOrCreate(['name' => 'site_title','value' => 'LaraStarter']);
+        Setting::updateOrCreate(['name' => 'site_title','value' => 'LaraBlog']);
         Setting::updateOrCreate(['name' => 'site_description','value' => 'A laravel starter kit for web artisans.']);
-        Setting::updateOrCreate(['name' => 'site_address','value' => 'Dhaka,Bangladesh']);
+        Setting::updateOrCreate(['name' => 'site_address','value' => '']);
         // Logo Settings
         Setting::updateOrCreate(['name' => 'site_logo','value' => null]);
         Setting::updateOrCreate(['name' => 'site_favicon','value' => null]);
