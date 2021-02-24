@@ -34,7 +34,7 @@
     <div class="scrollbar-sidebar">
         <div class="app-sidebar__inner">
             <ul class="vertical-nav-menu">
-                <x-backend-sidebar />
+                <x-backend-side-menu />
             </ul>
         </div>
     </div>

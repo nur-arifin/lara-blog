@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Backend\PageController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -18,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Auth::routes();
 
@@ -29,3 +30,6 @@ Route::group(['as' => 'login.', 'prefix' => 'login', 'namespace' => 'Auth'], fun
 });
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+// Pages route e.g. [about,contact,etc]
+Route::get('page/{slug}', [PageController::class,'index'])->name('page');

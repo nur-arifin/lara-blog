@@ -22,7 +22,10 @@
         "sass-loader": "^8.0.0"
     },
     "dependencies": {
+        "dropify": "^0.2.2",
+        "izitoast": "^1.4.0",
         "nestable2": "^1.6.0",
+        "select2": "^4.1.0-rc.0",
         "sweetalert2": "^10.15.5"
     }
 }

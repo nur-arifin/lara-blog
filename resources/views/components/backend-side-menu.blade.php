@@ -13,10 +13,10 @@
             @else
                 <li
                     @foreach($item->childs as $child)
-                    @if (Request::is(ltrim($child->url,'/').'*'))
-                    class="mm-active"
-                    @break
-                    @endif
+                        @if (Request::is(ltrim($child->url,'/').'*'))
+                            class="mm-active"
+                            @break
+                        @endif
                     @endforeach
                 >
                     <a href="{{ $item->url }}" class="{{ Request::is(ltrim($item->url,'/').'*') ? 'mm-active' : '' }}">

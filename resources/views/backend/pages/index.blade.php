@@ -14,7 +14,7 @@
                     <i class="pe-7s-news-paper icon-gradient bg-mean-fruit">
                     </i>
                 </div>
-                <div>{{ __('Pages') }}</div>
+                <div>{{ __('All Pages') }}</div>
             </div>
             <div class="page-title-actions">
                 <div class="d-inline-block dropdown">
@@ -22,7 +22,7 @@
                         <span class="btn-icon-wrapper pr-2 opacity-7">
                             <i class="fas fa-plus-circle fa-w-20"></i>
                         </span>
-                        {{ __('create') }}
+                        {{ __('Create Page') }}
                     </a>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                                 <td class="text-center text-muted">#{{ $key + 1 }}</td>
                                 <td style="width: 30%">{{ $page->title }}</td>
                                 <td>
-                                    <a href="" target="_blank">
+                                    <a href="{{ route('page',$page->slug) }}" target="_blank">
                                         {{ $page->slug }}
                                     </a>
                                 </td>

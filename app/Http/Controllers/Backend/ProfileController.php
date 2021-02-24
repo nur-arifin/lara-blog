@@ -19,11 +19,7 @@ class ProfileController extends Controller
 
     public function update(UpdateProfileRequest $request)
     {
-        $this->validate($request,[
-            'name' => 'required|string|max:255',
-            'email' => 'required\string|email|max:255|unique:users,email,'. Auth::id(),
-            'avatar' => 'nullable|image'
-        ]);
+        Gate::authorize('app.profile.update');
         // Get logged in user
         $user = Auth::user();
         // Update user info

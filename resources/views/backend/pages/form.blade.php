@@ -4,12 +4,6 @@
 
 @push('css')
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css" integrity="sha512-EZSUkJWTjzDlspOoPSpUFR0o0Xy7jdzW//6qhUkoZ9c4StFkVsp9fbbd0O06p9ELS3H486m4wmrCELjza4JEog==" crossorigin="anonymous" />
-    <style>
-        .dropify-wrapper .dropify-message p {
-            font-size: initial;
-        }
-    </style>
 @endpush
 
 @section('content')
@@ -198,12 +192,7 @@
 
 @push('js')
     <script src="https://cdn.tiny.cloud/1/g1axuf87kmcxy93m2ynfmp3usxm3k0mrzcdmm62m0f3pfme3/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/js/dropify.min.js" integrity="sha512-8QFTrG0oeOiyWo/VM9Y8kgxdlCryqhIxVeRpWSezdRRAvarxVtwLnGroJgnVW9/XBRduxO/z1GblzPrMQoeuew==" crossorigin="anonymous"></script>
-    <script>
-        $(document).ready(function() {
-            $('.dropify').dropify();
-        });
-    </script>
+
     <script>
         tinymce.init({
             selector: '#body',

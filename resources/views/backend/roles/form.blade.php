@@ -28,7 +28,7 @@
         <div class="col-12">
             <div class="main-card mb-3 card">
                 <!-- form start -->
-                <form role="form" method="POST"
+                <form id="roleFrom" role="form" method="POST"
                       action="{{ isset($role) ? route('app.roles.update',$role->id) : route('app.roles.store') }}">
                     @csrf
                     @if (isset($role))
@@ -36,25 +36,22 @@
                     @endif
                     <div class="card-body">
                         <h5 class="card-title">Manage Roles</h5>
-                        <div class="form-group">
-                            <label for="name">Role name</label>
-                            <input id="name" type="text" class="form-control @error('name')
-                                is-invalid @enderror" name="name" value="{{ $role->name ?? old('name') }}"
-                                   required autofocus>
 
-                            @error('name')
-                            <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                            @enderror
-                        </div>
+                        <x-forms.textbox label="Role Name"
+                                         name="name"
+                                         value="{{ $role->name ?? ''  }}"
+                                         placeholder="Enter role name"
+                                         field-attributes="required autofocus">
+                        </x-forms.textbox>
 
                         <div class="text-center">
                             <strong>Manage permissions for role</strong>
                             @error('permissions')
-                            <span class="text-danger" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                            <p class="p-2">
+                        <span class="text-danger" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                            </p>
                             @enderror
                         </div>
 
@@ -78,9 +75,9 @@
                                                            name="permissions[]"
                                                     @if(isset($role))
                                                         @foreach($role->permissions as $rPermission)
-                                                            {{ $permission->id == $rPermission->id ? 'checked' : '' }}
-                                                            @endforeach
-                                                        @endif
+                                                        {{ $permission->id == $rPermission->id ? 'checked' : '' }}
+                                                        @endforeach
+                                                    @endif
                                                     >
                                                     <label class="custom-control-label"
                                                            for="permission-{{ $permission->id }}">{{ $permission->name }}</label>

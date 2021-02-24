@@ -2,15 +2,6 @@
 
 @section('title','Profile')
 
-@push('css')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css" integrity="sha512-EZSUkJWTjzDlspOoPSpUFR0o0Xy7jdzW//6qhUkoZ9c4StFkVsp9fbbd0O06p9ELS3H486m4wmrCELjza4JEog==" crossorigin="anonymous" />
-    <style>
-        .dropify-wrapper .dropify-message p {
-            font-size: initial;
-        }
-    </style>
-@endpush
-
 @section('content')
     <div class="app-page-title">
         <div class="page-title-wrapper">
@@ -37,7 +28,7 @@
                                     <label for="avatar">Avatar (Only Image are allowed) </label>
                                     <input type="file" name="avatar" id="avatar"
                                            class="dropify @error('avatar') is-invalid @enderror"
-                                           data-default-file="{{ Auth::user()->getFirstMediaUrl('avatar') ?? '' }}">
+                                           data-default-file="{{ Auth::user()->getFirstMediaUrl('avatar','thumb') ?? '' }}">
                                     @error('avatar')
                                     <span class="text-danger" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -102,12 +93,3 @@
         </div>
     </form>
 @endsection
-
-@push('js')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/js/dropify.min.js" integrity="sha512-8QFTrG0oeOiyWo/VM9Y8kgxdlCryqhIxVeRpWSezdRRAvarxVtwLnGroJgnVW9/XBRduxO/z1GblzPrMQoeuew==" crossorigin="anonymous"></script>
-    <script>
-        $(document).ready(function() {
-            $('.dropify').dropify();
-        });
-    </script>
-@endpush

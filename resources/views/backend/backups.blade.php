@@ -33,7 +33,7 @@
 
                     <button onclick="event.preventDefault();
                           document.getElementById('new-backup-form').submit();"
-                            class="btn-shadow btn btn-info">
+                       class="btn-shadow btn btn-info">
                         <span class="btn-icon-wrapper pr-2 opacity-7">
                             <i class="fas fa-plus-circle fa-w-20"></i>
                         </span>
@@ -61,33 +61,33 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($backups as $key=>$backup)
-                            <tr>
-                                <td class="text-center text-muted">#{{ $key + 1 }}</td>
-                                <td class="text-center">
-                                    <code>{{ $backup['file_name'] }}</code>
-                                </td>
-                                <td class="text-center">{{ $backup['file_size'] }}</td>
-                                <td class="text-center">{{ $backup['created_at'] }}</td>
-                                <td class="text-center">
-                                    <a class="btn btn-info btn-sm" href="{{ route('app.backups.download',$backup['file_name']) }}"><i
-                                            class="fas fa-download"></i>
-                                        <span>Download</span>
-                                    </a>
-                                    <button type="button" class="btn btn-danger btn-sm"
-                                            onclick="deleteData({{ $key }})">
-                                        <i class="fas fa-trash-alt"></i>
-                                        <span>Delete</span>
-                                    </button>
-                                    <form id="delete-form-{{ $key }}"
-                                          action="{{ route('app.backups.destroy',$backup['file_name']) }}" method="POST"
-                                          style="display: none;">
-                                        @csrf()
-                                        @method('DELETE')
-                                    </form>
-                                </td>
-                            </tr>
-                        @endforeach
+                            @foreach($backups as $key=>$backup)
+                                <tr>
+                                    <td class="text-center text-muted">#{{ $key + 1 }}</td>
+                                    <td class="text-center">
+                                        <code>{{ $backup['file_name'] }}</code>
+                                    </td>
+                                    <td class="text-center">{{ $backup['file_size'] }}</td>
+                                    <td class="text-center">{{ $backup['created_at'] }}</td>
+                                    <td class="text-center">
+                                        <a class="btn btn-info btn-sm" href="{{ route('app.backups.download',$backup['file_name']) }}"><i
+                                                class="fas fa-download"></i>
+                                            <span>Download</span>
+                                        </a>
+                                        <button type="button" class="btn btn-danger btn-sm"
+                                                onclick="deleteData({{ $key }})">
+                                            <i class="fas fa-trash-alt"></i>
+                                            <span>Delete</span>
+                                        </button>
+                                        <form id="delete-form-{{ $key }}"
+                                              action="{{ route('app.backups.destroy',$backup['file_name']) }}" method="POST"
+                                              style="display: none;">
+                                            @csrf()
+                                            @method('DELETE')
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

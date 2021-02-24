@@ -1,8 +1,8 @@
 <div class="app-header header-shadow">
     <div class="app-header__logo">
-        <div class="logo"><img height="30px" src="{{ setting('site_logo') != null ? Storage::disk('public')->url(setting('site_logo')) : '' }}" alt=""></div>
+        {{--<div class="logo-src"></div>--}}
         <div class="navbar-brand">
-            {{ setting('site_title') }}
+            {{ setting('site_title','LaraStarter') }}
         </div>
         <div class="header__pane ml-auto">
             <div>
@@ -35,10 +35,17 @@
                 </span>
     </div>
     <div class="app-header__content">
-        <div class="app-header-right">
+        <div class="app-header-left">
+            <div class="search-wrapper">
+                <div class="input-holder">
+                    <input type="text" class="search-input" placeholder="Type to search">
+                    <button class="search-icon"><span></span></button>
+                </div>
+                <button class="close"></button>
+            </div>
             <ul class="header-menu nav">
                 <li class="dropdown nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{ route('welcome') }}" class="nav-link">
                         <i class="nav-link-icon pe-7s-shuffle"></i>
                         Visit Site
                     </a>
