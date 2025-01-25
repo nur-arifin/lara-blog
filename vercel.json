@@ -6,12 +6,8 @@
         }
     },
     "routes": [
-        { "src": "/build/(.*)", "dest": "/public/build/" },
-        { "src": "/(.*)", "dest": "/api/index.php" }
-    ],
-    "routes": [
         {
-            "src": "/(css|js|vendor|assets|build)/(.*)",
+            "src": "/(css|js|fonts|vendor|assets|build)/(.*)",
             "dest": "public/$1/$2"
         },
         {
