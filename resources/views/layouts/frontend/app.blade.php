@@ -31,7 +31,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                    @role('admin')
+                                        <a class="dropdown-item" href="{{ route('app.dashboard') }}">
+                                            {{ __('Dashboard') }}
+                                        </a>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
