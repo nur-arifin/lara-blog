@@ -17,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/linkstore', function () {
+    Artisan::call('storage:link');
+});
+
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
