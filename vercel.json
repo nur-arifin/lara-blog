@@ -27,7 +27,12 @@
         "VIEW_COMPILED_PATH": "/tmp",
         "CACHE_DRIVER": "array",
         "LOG_CHANNEL": "stderr",
-        "SESSION_DRIVER": "cookie"
+        "SESSION_DRIVER": "cookie",
+        "DB_CONNECTION": "pgsql",
+        "DB_HOST": "oexqg.h.filess.io",
+        "DB_PORT": "5433",
+        "DB_DATABASE": "BlogApp_risingfilm",
+        "DB_USERNAME": "BlogApp_risingfilm"
     },
     "outputDirectory": "public"
 }
