@@ -6,8 +6,6 @@
                 rights reserved.
             </div>
             <div class="app-footer-right">
-                <strong> Developed &amp; <i class="fas fa-heart"></i> by </strong>&nbsp;
-                <a target="_blank" href="https://www.youtube.com/programmingkit">Programming Kit</a>
             </div>
         </div>
     </div>
