@@ -6,7 +6,7 @@
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no"/>
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
     <title>@yield('title') | {{ setting('site_title', 'LaraStarter') }}</title>
 
     <link rel="icon"  href="{{ setting('site_favicon') != null ? Storage::disk('public')->url(setting('site_favicon')) : '' }}"/>
