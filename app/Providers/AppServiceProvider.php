@@ -25,6 +25,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        if(config('app.env') === 'production') {
+            URL::forceScheme('https');
+        }
         // Custom blade directive for role check
         Blade::if('role', function ($role) {
             return Auth::user()->role->slug == $role;
