@@ -28,11 +28,11 @@
         "CACHE_DRIVER": "array",
         "LOG_CHANNEL": "stderr",
         "SESSION_DRIVER": "cookie",
-        "DB_CONNECTION": "pgsql",
-        "DB_HOST": "oexqg.h.filess.io",
-        "DB_PORT": "5433",
-        "DB_DATABASE": "BlogApp_risingfilm",
-        "DB_USERNAME": "BlogApp_risingfilm"
+        "DB_CONNECTION": "mysql",
+        "DB_HOST": "ple7y.h.filess.io",
+        "DB_PORT": "3307",
+        "DB_DATABASE": "blogApp_valuableon",
+        "DB_USERNAME": "blogApp_valuableon"
     },
     "outputDirectory": "public"
 }
