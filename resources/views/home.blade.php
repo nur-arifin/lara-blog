@@ -15,6 +15,11 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                    @role('admin')
+                        <a class="dropdown-item" href="{{ route('app.dashboard') }}">
+                        {{ __('Dashboard') }}
+                        </a>
+                    @endrole
                 </div>
             </div>
         </div>

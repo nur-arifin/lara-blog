@@ -35,6 +35,7 @@
                                         <a class="dropdown-item" href="{{ route('app.dashboard') }}">
                                             {{ __('Dashboard') }}
                                         </a>
+                                        @endrole
                     </ul>
 
                     <!-- Right Side Of Navbar -->
