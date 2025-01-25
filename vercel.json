@@ -15,6 +15,12 @@
             "dest": "/api/index.php"
         }
     ],
+    "rewrites": [
+        { "source": "/js/(.*)", "destination": "/public/js/$1" },
+        { "source": "/css/(.*)", "destination": "/public/css/$1" },
+        { "source": "/images/(.*)", "destination": "/public/images/$1" },
+        { "source": "/(.*)", "destination": "/index.php" }
+    ],
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "true",
